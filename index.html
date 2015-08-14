@@ -72,7 +72,7 @@
         </div>
         <div class="col-md-9">
           <div class="row">
-            <p>{{post.title}} | <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span> {{post.votes}}</p>
+            <p>{{post.title}} | <span class="glyphicon glyphicon-arrow-up" ng-click="post.votes = post.votes + 1"></span> <span class="glyphicon glyphicon-arrow-down" ng-click="post.votes = post.votes - 1"></span> {{post.votes}}</p>
           </div>
           <div class="row">
             <p class="text-right">By {{post.author}}</p>

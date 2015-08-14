@@ -43,22 +43,27 @@
 
   <div class="container">
 
-    <form ng-show="postForm" class="input-group">
-      <label>Title<input ng-model="post.title" class="form-control" placeholder="Title of Post"></label>
-      <label for="author">Author</label>
-      <input ng-model="post.author" id="author" class="form-control" placeholder="Author of Post">
-      <label for="image">Image URL</label>
-      <input ng-model="post.image" id="image" class="form-control" placeholder="URL of Image">
-      <label for="desc">Description</label>
-      <input ng-model="post.desc" id="desc" class="form-control" placeholder="Description">
-      <button type="submit" ng-click="addPost()">Add Post</button>
+    <form ng-show="postForm" class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input ng-model="post.title" id="title" class="form-control" placeholder="Title of Post">
+      </div>
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input ng-model="post.author" id="author" class="form-control" placeholder="Author of Post">
+      </div>
+      <div class="form-group">
+        <label for="image">Image URL</label>
+        <input ng-model="post.image" id="image" class="form-control" placeholder="URL of Image">
+      </div>
+      <div class="form-group">
+        <label for="desc">Description</label>
+        <input ng-model="post.desc" id="desc" class="form-control" placeholder="Description">
+      </div>
+      <button class="btn btn-default" type="submit" ng-click="addPost()">Submit Post</button>
     </form>
 
     <div><p>Testing: {{posts}}</p></div>
-
-
-
-
 
 
 

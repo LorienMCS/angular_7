@@ -23,7 +23,7 @@
           <div class="navbar-brand">Reddit Clone</div>
         </div>
           <ul class="nav navbar-nav">
-            <li><p class="navbar-text"><span class="glyphicon glyphicon-plus"></span>Submit Post</p></li>
+            <li><p class="navbar-text" ng-click="showPostForm()"><span class="glyphicon glyphicon-plus"></span>Submit Post</p></li>
           </ul>
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -42,6 +42,26 @@
   </header>
 
   <div class="container">
+
+    <form ng-show="postForm" class="input-group">
+      <label>Title<input ng-model="post.title" class="form-control" placeholder="Title of Post"></label>
+      <label for="author">Author</label>
+      <input ng-model="post.author" id="author" class="form-control" placeholder="Author of Post">
+      <label for="image">Image URL</label>
+      <input ng-model="post.image" id="image" class="form-control" placeholder="URL of Image">
+      <label for="desc">Description</label>
+      <input ng-model="post.desc" id="desc" class="form-control" placeholder="Description">
+      <button type="submit" ng-click="addPost()">Add Post</button>
+    </form>
+
+    <div><p>Testing: {{posts}}</p></div>
+
+
+
+
+
+
+
   </div>
 
 

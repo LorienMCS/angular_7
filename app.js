@@ -4,6 +4,8 @@ app.controller("RedditClone", function($scope){
 	$scope.postForm = false;
 	$scope.posts = [];
 	$scope.post = {};
+	$scope.post.comments = [];
+	$scope.post.comment = {};
 
 	$scope.showPostForm = function() {
 			$scope.postForm = true;
@@ -11,7 +13,8 @@ app.controller("RedditClone", function($scope){
 
 	$scope.addPost = function() {
 		if($scope.formPost.$valid){
-			$scope.post.time = new Date();
+			$scope.post.date = new Date();
+			$scope.post.votes = 0;
 			$scope.posts.push($scope.post);
 			$scope.post = {};
 			$scope.postForm = false;

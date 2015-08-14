@@ -10,3 +10,19 @@
   background-color: #FCB1B5;
 }
 
+.postBox {
+	background-color: #F9F9F9;
+	padding: 10px 10px 10px;
+	margin: 10px 0 10px 0;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+
+#postImg {
+	height: 150px;
+}
+
+#description {
+	height: 60px;
+}
+

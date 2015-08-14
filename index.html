@@ -23,19 +23,19 @@
           <div class="navbar-brand">Reddit Clone</div>
         </div>
           <ul class="nav navbar-nav">
-            <li><p class="navbar-text" ng-click="showPostForm()"><span class="glyphicon glyphicon-plus"></span>Submit Post</p></li>
+            <li><p class="navbar-text" ng-click="showPostForm()"><span class="glyphicon glyphicon-plus"></span> Submit Post</p></li>
           </ul>
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
+              <input type="text" class="form-control" ng-model="searchText" placeholder="Search">
             </div>
           </form>
           <div class="input-group">
             <p class="navbar-text">Sort By</p>
-            <select class="navbar-form form-inline" id="sort">
-              <option value="">Votes</option>
-              <option value="">Date</option>
-              <option value="">Title</option>
+            <select class="navbar-form form-inline" id="sort" ng-model="sortChoice">
+              <option value="votes">Votes</option>
+              <option value="date">Date</option>
+              <option value="title">Title</option>
             </select>
           </div>
     </nav>
@@ -63,14 +63,32 @@
       <button class="btn btn-default" type="submit" ng-click="addPost()">Submit Post</button>
     </form>
 
-    <div><p>Testing: {{posts}}</p></div>
+    <div class="clearfix"></div>
+
+    <div ng-repeat="post in posts | filter:searchText | orderBy:sortChoice">
+      <div class="row postBox">
+        <div class="col-md-3">
+          <img ng-src="{{post.image}}" alt="photo of {{post.title}}" class="img-responsive" id="postImg"/>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <p>{{post.title}} | <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span> {{post.votes}}</p>
+          </div>
+          <div class="row">
+            <p class="text-right">By {{post.author}}</p>
+          </div>
+          <div class="row">
+            <p id="description">{{post.desc}}</p>
+          </div>
+          <div class="row">
+            <p><span class="glyphicon glyphicon-calendar"></span>{{post.date}} | <span class="glyphicon glyphicon-comment"></span> TODO: pluralize comments | <span class="glyphicon glyphicon-pencil"></span>Add Comment</p>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+    </div> <!-- closing div for ng-repeat -->
 
 
-
-  </div>
-
-
-
+  </div> <!-- closing div for entire app container -->
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>

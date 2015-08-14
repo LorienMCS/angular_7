@@ -1,4 +1,4 @@
-var app = angular.module("partSevenApp", ['ui.bootstrap']);
+var app = angular.module("partSevenApp", ['ui.bootstrap', 'angularMoment']);
 
 app.controller("RedditClone", function($scope){
 	$scope.postForm = false;
@@ -11,6 +11,7 @@ app.controller("RedditClone", function($scope){
 
 	$scope.addPost = function() {
 		if($scope.formPost.$valid){
+			$scope.post.time = new Date();
 			$scope.posts.push($scope.post);
 			$scope.post = {};
 			$scope.postForm = false;

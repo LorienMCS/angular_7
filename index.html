@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- use the module created in app.js -->
-<html lang="en" ng-app="partSevenApp">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.4/lumen/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+    <script src="ui-bootstrap-tpls-0.13.3.min.js"></script>
+    <script src="app.js"></script>
 </head>
 
-<body ng-controller="RedditClone">
+<body ng-app="partSevenApp" ng-controller="RedditClone">
 
   <header>
     <nav class="navbar navbar-default">
@@ -43,22 +46,22 @@
 
   <div class="container">
 
-    <form ng-show="postForm" class="form-horizontal" role="form">
+    <form ng-show="postForm" class="form-horizontal" name="formPost">
       <div class="form-group">
         <label for="title">Title</label>
-        <input ng-model="post.title" id="title" class="form-control" placeholder="Title of Post">
+        <input type="text" ng-model="post.title" id="title" class="form-control" placeholder="Title of Post" required>
       </div>
       <div class="form-group">
         <label for="author">Author</label>
-        <input ng-model="post.author" id="author" class="form-control" placeholder="Author of Post">
+        <input type="text" ng-model="post.author" id="author" class="form-control" placeholder="Author of Post" required>
       </div>
       <div class="form-group">
         <label for="image">Image URL</label>
-        <input ng-model="post.image" id="image" class="form-control" placeholder="URL of Image">
+        <input type="text" ng-model="post.image" id="image" class="form-control" placeholder="URL of Image" required>
       </div>
       <div class="form-group">
         <label for="desc">Description</label>
-        <input ng-model="post.desc" id="desc" class="form-control" placeholder="Description">
+        <input type="text" ng-model="post.desc" id="desc" class="form-control" placeholder="Description" required>
       </div>
       <button class="btn btn-default" type="submit" ng-click="addPost()">Submit Post</button>
     </form>
@@ -73,9 +76,7 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
-    <script src="ui-bootstrap-tpls-0.13.3.min.js"></script>
-    <script src="app.js"></script>
+    
 </body>
 
 </html>

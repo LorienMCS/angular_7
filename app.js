@@ -6,13 +6,16 @@ app.controller("RedditClone", function($scope){
 	$scope.post = {};
 
 	$scope.showPostForm = function() {
-		$scope.postForm = true;
+			$scope.postForm = true;
 	};
 
 	$scope.addPost = function() {
-		$scope.posts.push($scope.post);
-		$scope.post = {};
-		$scope.postForm = false;
+		if($scope.formPost.$valid){
+			$scope.posts.push($scope.post);
+			$scope.post = {};
+			$scope.postForm = false;
+			$scope.formPost.$setUntouched();
+		}
 	};
 
 })

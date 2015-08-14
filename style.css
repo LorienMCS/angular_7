@@ -5,3 +5,8 @@
 #sort {
 	margin-top: 16px;
 }
+
+.form-horizontal input.ng-invalid.ng-touched {
+  background-color: #FCB1B5;
+}
+

@@ -81,7 +81,7 @@
             <p id="description">{{post.desc}}</p>
           </div>
           <div class="row">
-            <p><span class="glyphicon glyphicon-calendar"></span>{{post.date}} | <span class="glyphicon glyphicon-comment"></span> TODO: pluralize comments | <span class="glyphicon glyphicon-pencil"></span>Add Comment</p>
+            <p><span class="glyphicon glyphicon-calendar"></span><time title="{{ post.date | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}">{{post.date | amCalendar}}</time> | <span class="glyphicon glyphicon-comment"></span> TODO: pluralize comments | <span class="glyphicon glyphicon-pencil"></span>Add Comment</p>
           </div>
         </div>
         <div class="clearfix"></div>

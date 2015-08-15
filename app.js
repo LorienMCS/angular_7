@@ -6,6 +6,10 @@ app.controller("RedditClone", function($scope){
 	$scope.post = {};
 	$scope.post.comments = [];
 	$scope.post.comment = {};
+	$scope.sortChoice = '-votes';
+	if($scope.sortChoice = 'votes'){
+		$scope.sortChoice = '-votes';
+	}
 
 	$scope.showPostForm = function() {
 			$scope.postForm = true;

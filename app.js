@@ -71,6 +71,10 @@ app.controller("RedditClone", function($scope) {
 	};
 
 	$scope.addComment = function(post) {
+		// Zubair: useful for figuring out what *this* is in this case
+		// console.log(post);
+		// console.log(this);
+		// console.log(this.comment);
 		post.comments.push(this.comment);
 		this.comment = {};
 		this.commentForm = false;

@@ -46,6 +46,7 @@ app.controller("RedditClone", function($scope) {
 	$scope.post = {};
 	$scope.post.comments = [];
 	$scope.post.comment = {};
+	$scope.post.commentForm = false;
 	$scope.sortChoice = '-votes';
 
 	$scope.showPostForm = function() {
@@ -62,5 +63,13 @@ app.controller("RedditClone", function($scope) {
 			$scope.formPost.$setUntouched();
 		}
 	};
+
+	$scope.showCommentForm = function() {
+		$scope.post.commentForm = true;
+	};
+
+	$scope.addComment = function() {
+		$scope.post.comments.push($scope.post.comment);
+	}
 
 })

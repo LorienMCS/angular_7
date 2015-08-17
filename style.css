@@ -26,3 +26,11 @@
 	height: 60px;
 }
 
+.upvotes {
+	color: #00A300;
+}
+
+.downvotes {
+	color: red;
+}
+

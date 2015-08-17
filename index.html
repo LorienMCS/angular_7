@@ -84,17 +84,17 @@
             <p><span class="glyphicon glyphicon-calendar"></span><time title="{{ post.date | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}">{{post.date | amCalendar}}</time> | <span class="glyphicon glyphicon-comment"></span>
             <ng-pluralize count="post.comments.length" when="{
               '1': '{{post.comments.length}} comment',
-              'other': '{{post.comments.length}} comments'}"></ng-pluralize> | <span class="glyphicon glyphicon-pencil"></span><span ng-click="showCommentForm()">Add Comment</span></p>
+              'other': '{{post.comments.length}} comments'}"></ng-pluralize> | <span class="glyphicon glyphicon-pencil"></span><span ng-click="showCommentForm(post); $event.stopPropagation()">Add Comment</span></p>
+            <form ng-show="commentForm">
+              <div>
+                <label for="author">Author</label>
+                <input type="text" ng-model="post.comment.author" name="author" placeholder="Author of Comment">
+                <label for="text">Text</label>
+                <input type="text" ng-model="post.comment.text" name="text" placeholder="Comment">
+                <button class="btn btn-default" type="submit" ng-click="addComment()">Add Comment</button>
+              </div>
           </div>
         </div>
-        <form ng-show="postComment">
-          <div class="form-group">
-            <label for="author">Author</label>
-            <input type="text" ng-model="post.comment.author" name="author" class="form-control" placeholder="Author of Comment">
-            <label for="text">Text</label>
-            <input type="text" ng-model="post.comment.text" name="text" class="form-control" placeholder="Comment">
-            <button class="btn btn-default" type="submit" ng-click="addComment()">Add Comment</button>
-          </div>
         <div class="clearfix"></div>
       </div>
     </div> <!-- closing div for ng-repeat -->

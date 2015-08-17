@@ -1,4 +1,4 @@
-var app = angular.module("partSevenApp", ['ui.bootstrap', 'angularMoment']);
+var app = angular.module("partSevenApp", ['ui.bootstrap', 'angularMoment', 'ngAnimate']);
 
 app.controller("RedditClone", function($scope) {
 	$scope.postForm = false;
@@ -66,6 +66,7 @@ app.controller("RedditClone", function($scope) {
 	};
 
 	$scope.showCommentForm = function(post) {
+		this.commentsView = false;
 		this.commentForm = true;
 	};
 
@@ -73,10 +74,15 @@ app.controller("RedditClone", function($scope) {
 		post.comments.push(this.comment);
 		this.comment = {};
 		this.commentForm = false;
-	}
-
-	$scope.showComments = function(post) {
 		this.commentsView = true;
-	}
+	};
+
+	$scope.toggleComments = function(post) {
+		if(this.commentsView == false) {
+			this.commentsView = true;
+		} else {
+		this.commentsView = false;
+		}
+	};
 
 })

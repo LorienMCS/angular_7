@@ -79,7 +79,7 @@
             <p id="description">{{post.desc}}</p>
           </div>
           <div class="row">
-            <p><span class="glyphicon glyphicon-calendar"> </span><time title="{{ post.date | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}">{{post.date | amCalendar}}</time> | <span class="glyphicon glyphicon-comment"></span> <span ng-click="showComments(post); $event.stopPropagation()"><ng-pluralize count="post.comments.length" when="{
+            <p><span class="glyphicon glyphicon-calendar"> </span><time title="{{ post.date | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}">{{post.date | amCalendar}}</time> | <span class="glyphicon glyphicon-comment"></span> <span ng-click="toggleComments(post); $event.stopPropagation()"><ng-pluralize count="post.comments.length" when="{
               '1': '{{post.comments.length}} comment',
               'other': '{{post.comments.length}} comments'}"></ng-pluralize></span> | <span class="glyphicon glyphicon-pencil"></span><span ng-click="showCommentForm(post); $event.stopPropagation()">Add Comment</span></p>
             <div ng-show="commentsView" ng-repeat="comment in post.comments">
@@ -88,9 +88,9 @@
             <form ng-show="commentForm">
               <div>
                 <label for="author">Author</label>
-                <input type="text" ng-model="comment.author" name="author" placeholder="Author of Comment">
+                <input type="text" ng-model="comment.author" name="author" placeholder="username">
                 <label for="text">Text</label>
-                <input type="text" ng-model="comment.text" name="text" placeholder="Comment">
+                <input type="text" ng-model="comment.text" name="text" placeholder="comment text">
                 <button class="btn btn-default" type="submit" ng-click="addComment(post); $event.stopPropogation()">Add Comment</button>
               </div>
             </form>
@@ -108,6 +108,7 @@
   <script src="ui-bootstrap-tpls-0.13.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
   <script src="app.js"></script>
 </body>
 

@@ -7,9 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Angular Part 7</title>
     <meta name="description" content="Galvanize Full Stack self-paced Angular. Part 7: Angular Reddit Clone">
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.4/lumen/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
@@ -81,10 +79,12 @@
             <p id="description">{{post.desc}}</p>
           </div>
           <div class="row">
-            <p><span class="glyphicon glyphicon-calendar"></span><time title="{{ post.date | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}">{{post.date | amCalendar}}</time> | <span class="glyphicon glyphicon-comment"></span>
-            <ng-pluralize count="post.comments.length" when="{
+            <p><span class="glyphicon glyphicon-calendar"> </span><time title="{{ post.date | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}">{{post.date | amCalendar}}</time> | <span class="glyphicon glyphicon-comment"></span> <span ng-click="showComments(post); $event.stopPropagation()"><ng-pluralize count="post.comments.length" when="{
               '1': '{{post.comments.length}} comment',
-              'other': '{{post.comments.length}} comments'}"></ng-pluralize> | <span class="glyphicon glyphicon-pencil"></span><span ng-click="showCommentForm(post); $event.stopPropagation()">Add Comment</span></p>
+              'other': '{{post.comments.length}} comments'}"></ng-pluralize></span> | <span class="glyphicon glyphicon-pencil"></span><span ng-click="showCommentForm(post); $event.stopPropagation()">Add Comment</span></p>
+            <div ng-show="commentsView" ng-repeat="comment in post.comments">
+              <p><strong>{{comment.author}}</strong> - {{comment.text}}</p>
+            </div>
             <form ng-show="commentForm">
               <div>
                 <label for="author">Author</label>
@@ -93,6 +93,7 @@
                 <input type="text" ng-model="comment.text" name="text" placeholder="Comment">
                 <button class="btn btn-default" type="submit" ng-click="addComment(post); $event.stopPropogation()">Add Comment</button>
               </div>
+            </form>
           </div>
         </div>
         <div class="clearfix"></div>

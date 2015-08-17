@@ -63,7 +63,7 @@
 
     <div class="clearfix"></div>
 
-    <div ng-repeat="post in posts | filter:searchText | orderBy:sortChoice">
+    <div ng-repeat="post in posts | filter:searchText | orderBy:sortChoice" class="animate">
       <div class="row postBox">
         <div class="col-md-3">
           <img ng-src="{{post.image}}" alt="photo of {{post.title}}" class="img-responsive" id="postImg"/>

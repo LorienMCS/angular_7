@@ -68,8 +68,9 @@ app.controller("RedditClone", function($scope) {
 		this.commentForm = true;
 	};
 
-	$scope.addComment = function() {
-		$scope.post.comments.push($scope.post.comment);
+	$scope.addComment = function(post) {
+		post.comments.push(this.comment);
+		this.comment = {};
 	}
 
 })

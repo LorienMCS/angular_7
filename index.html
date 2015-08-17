@@ -82,7 +82,7 @@
             <p><span class="glyphicon glyphicon-calendar"> </span><time title="{{ post.date | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}">{{post.date | amCalendar}}</time> | <span class="glyphicon glyphicon-comment"></span> <span ng-click="toggleComments(post); $event.stopPropagation()"><ng-pluralize count="post.comments.length" when="{
               '1': '{{post.comments.length}} comment',
               'other': '{{post.comments.length}} comments'}"></ng-pluralize></span> | <span class="glyphicon glyphicon-pencil"></span><span ng-click="showCommentForm(post); $event.stopPropagation()">Add Comment</span></p>
-            <div ng-show="commentsView" ng-repeat="comment in post.comments">
+            <div ng-show="commentsView" ng-repeat="comment in post.comments" class="animate">
               <p><strong>{{comment.author}}</strong> - {{comment.text}}</p>
             </div>
             <form ng-show="commentForm">

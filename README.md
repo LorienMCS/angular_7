@@ -8,6 +8,9 @@
 Requirements:
 
 * Each post has a title, author, image, and description.
+<<<<<<< HEAD
+* Each post's date/time is displayed nicely: "Yesterday at 3:09pm", "Last Thursday at 4:42am", etc. You will need an external library.
+=======
 * Each post's date/time is displayed nicely: "Yesterday at 3:09pm", "Last Thursday at 4:42am", etc. You will need an external library.
 * A user can upvote/downvote posts.
 * Posts dynamically reorder according to number of votes.

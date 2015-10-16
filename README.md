@@ -1,5 +1,5 @@
 
-#####:sunny: :palm_tree: :evergreen_tree:[Demo of my completed assignment](http://lorienmcs.github.io/angular_7/#/):evergreen_tree: :palm_tree: :sunny:
+####:sunny: :palm_tree: :evergreen_tree:[Demo of my completed assignment](http://lorienmcs.github.io/angular_7/#/):evergreen_tree: :palm_tree: :sunny:
 
 #####This was a project for the 17th week of the Full Stack Program at [Galvanize](http://www.galvanize.com/courses/full-stack/).
 
@@ -8,9 +8,6 @@
 Requirements:
 
 * Each post has a title, author, image, and description.
-<<<<<<< HEAD
-* Each post's date/time is displayed nicely: "Yesterday at 3:09pm", "Last Thursday at 4:42am", etc. You will need an external library.
-=======
 * Each post's date/time is displayed nicely: "Yesterday at 3:09pm", "Last Thursday at 4:42am", etc. You will need an external library.
 * A user can upvote/downvote posts.
 * Posts dynamically reorder according to number of votes.

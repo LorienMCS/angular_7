@@ -3,7 +3,7 @@ var app = angular.module("partSevenApp", ['ui.bootstrap', 'angularMoment', 'ngAn
 app.controller("RedditClone", function($scope) {
 	$scope.postForm = false;
 	$scope.posts = [{
-		'title': 'a cute puppy',
+		'title': 'A cute puppy',
 		'author': 'First Author',
 		'image': 'https://upload.wikimedia.org/wikipedia/commons/6/64/The_Puppy.jpg',
 		'desc': 'A cute puppy in Megalochori, on Santorini Island, Greece.',
